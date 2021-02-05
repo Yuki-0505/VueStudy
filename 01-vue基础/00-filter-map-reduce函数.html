@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<script>
+		const nums = [12, 435, 223, 65, 243, 87, 341, 87];
+
+		let nums2 = nums.filter((n) => n < 100);
+		console.log(nums2);
+
+		let nums3 = nums2.map((n) => n * 2);
+		console.log(nums3);
+
+		let total = nums3.reduce((preVal, n) => preVal + n, 0);
+		console.log(total);
+
+		console.log(nums
+			.filter(n => n < 100)
+			.map(n => n * 2)
+			.reduce((preVal, n) => preVal + n, 0)
+		);
+	</script>
+</body>
+
+</html>

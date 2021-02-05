@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .active {
+      color: red;
+    }
+    .line {
+      color: yellow;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="app">
+    <!-- v-bind -->
+    <!-- <img v-bind:src="imgURL" alt=""> -->
+    <!-- 语法糖写法 -->
+    <img :src="imgURL" alt="">
+    <!-- <img src="./img/yui.jpg" alt=""> -->
+    <!-- 动态绑定class -->
+    <!-- 会合并固定class -->
+    <!-- 对象语法 -->
+    <h2 class="title" :class="{active: isActive,line: isLine}">{{message}}</h2>
+    <!-- 使用函数返回类 -->
+    <h2 class="title" :class="getClasses()">{{message}}</h2>
+    <!-- 数组语法 -->
+    <h2 class="title" :class="[aaa, bbb]">{{message}}</h2>
+
+    <h2 :style="{fontSize: fSize + 'px'}">{{message}}</h2>
+    <!--带-需要加引号，否则会识别为减号 -->
+    <h2 :style="{'font-size': fSize + 'px'}">{{message}}</h2>
+  </div>
+
+  <script src="./js/vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        message: "hello",
+        imgURL: "./img/yui.jpg",
+        isActive: true,
+        isLine: true,
+        aaa: "active",
+        bbb: "line",
+        fSize: 50,
+      },
+      methods: {
+        getClasses: function() {
+          return {active: this.isActive,line: this.isLine}
+        }
+      }
+    });
+  </script>
+</body>
+
+</html>

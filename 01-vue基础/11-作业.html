@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .red {
+      color: red;
+    }
+
+    .blue {
+      color: blue;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="app">
+    <ul>
+      <li v-for="(item, index) in movies" :class="{red: index == flag}" 
+      v-on:click="active(index)">{{index}}-{{item}}</li>
+    </ul>
+  </div>
+
+  <script src="./js/vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        movies: ["海王", "海尔兄弟", "进击的巨人", "火影忍者"],
+        flag: 0,
+      },
+      methods: {
+        active: function (index) {
+          this.flag = index;
+        },
+      },
+    });
+  </script>
+</body>
+
+</html>

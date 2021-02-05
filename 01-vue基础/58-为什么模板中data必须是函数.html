@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <cpn></cpn>
+    <cpn></cpn>
+    <cpn></cpn>
+  </div>
+
+	<template id="cpn">
+		<div>
+			<h2>当前计数：{{counter}}</h2>
+			<button @click="increment">+</button>
+			<button @click="decrement">-</button>
+		</div>
+	</template>
+	<script src="./js/vue.js"></script>
+  <script>
+		// 当一个页面中有多个模板实例时，使用函数可以保证每个实例使用的是不同的数据对象。
+		Vue.component('cpn', {
+			template: '#cpn', 
+			data() {
+				return {
+					counter: 0
+				}
+			},
+			methods: {
+				increment() {
+					this.counter++;
+				},
+				decrement() {
+					this.counter--;
+				}
+			}
+		});
+
+    const app = new Vue({
+      el: '#app',
+      data: {
+        
+      },
+      methods: {
+        
+      }
+		});
+  </script>
+</body>
+
+</html>

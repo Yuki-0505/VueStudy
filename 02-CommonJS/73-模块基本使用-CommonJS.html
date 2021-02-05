@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+	<script>
+		// 独立的js文件
+		var moduleA = (function () {
+			var name = "yuki";
+			var age = "18";
+			var flag = true;
+			var sum = function (a, b) {
+				return a + b;
+			}
+
+			var obj = {};
+			obj.name = name;
+			obj.age = age;
+			obj.flag = flag;
+			obj.sum = sum;
+			return obj;
+		})();
+	</script>
+	<script>
+		// 另一个独立的js文件
+		console.log(moduleA.name);
+		console.log(moduleA.sum(1, 3));
+	</script>
+
+	<!-- CommonJS -->
+	<!-- <script>
+		var flag = true;
+		var sum = function (a, b) {
+			return a + b;
+		}
+		module.exports = {
+			flag, 
+			sum
+		}
+	</script>
+	<script>
+		var {flag, sum} = require('./xxx.js');
+	</script> -->
+</body>
+
+</html>

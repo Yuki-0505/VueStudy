@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <div id="app">
+		<h2>{{counter}}</h2>
+		<!-- <button v-on:click="inc">+</button>
+		<button v-on:click="dec">-</button> -->
+		<button @click="inc">+</button>
+		<button @click="dec">-</button>
+  </div>
+
+  <script src="./js/vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        counter: 0
+      },
+      computed: {
+        
+      },
+      methods: {
+				inc() {
+					this.counter++;
+				},
+				dec() {
+					this.counter--;
+				}
+      }
+    });
+  </script>
+</body>
+
+</html>

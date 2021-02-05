@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <h2>当前计数：{{counter}}</h2>
+    <!-- <button v-on:click="counter++">+</button>
+        <button v-on:click="counter--">-</button> -->
+    <button v-on:click="add">+</button>
+    <button v-on:click="sub--">-</button>
+  </div>
+
+  <script src="./js/vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        counter: 1
+      },
+      methods: {
+        add: function () {
+          console.log("add method");
+          this.counter++;
+        },
+        sub: function () {
+          console.log("sub method");
+          this.counter--;
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>

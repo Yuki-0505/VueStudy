@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+
+	<div id="app">
+		<!-- lazy懒加载lazyload -->
+		<input type="text" v-model.lazy="message">
+		<h2>{{ message }}</h2>
+		<!-- number转化为数字类型 -->
+		<input type="number" v-model.number="age">
+		<h2>{{typeof age}}</h2>
+		<!-- trim去除收尾空格 -->
+		<input type="text" v-model.trim="name">
+		<h2>=={{name}}==</h2>
+	</div>
+
+	<script src="./js/vue.js"></script>
+	<script>
+		const app = new Vue({
+			el: '#app',
+			data: {
+				message: "hello",
+				age: 18,
+				name: ''
+			},
+			computed: {
+
+			},
+			methods: {
+
+			}
+		});
+	</script>
+</body>
+
+</html>

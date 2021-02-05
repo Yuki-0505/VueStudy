@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <div id="app">
+    <label for="agreen">
+			<input type="checkbox" id="agreen" v-model="isAgreen">同意协议
+		</label>
+		<button :disabled="!isAgreen">下一步</button>
+
+		<br>
+
+		<label for="basketball"><input type="checkbox" id="basketball" v-model="hobbies" value="篮球">篮球</label>
+		<label for="football"><input type="checkbox" id="football" v-model="hobbies" value="足球">足球</label>
+		<label for="pingpang"><input type="checkbox" id="pingpang" v-model="hobbies" value="乒乓球">乒乓球</label>
+		<label for="yumaoqiu"><input type="checkbox" id="yumaoqiu" v-model="hobbies" value="羽毛球">羽毛球</label>
+    <h2>兴趣爱好:{{hobbies}}</h2>
+
+    <label v-for="item in originHobbies" :for="item">
+      <input type="checkbox" :id="item" :value="item" v-model="hobbies">{{item}}
+    </label>
+    
+  </div>
+
+  <script src="./js/vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+				isAgreen: false,
+        hobbies: [],
+        originHobbies: ['篮球','足球','乒乓球','羽毛球']
+      },
+      computed: {
+        
+      },
+      methods: {
+
+      }
+    });
+  </script>
+</body>
+
+</html>
